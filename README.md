@@ -1,6 +1,6 @@
 ﻿@[TOC](stm32驱动GC9A01显示)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/e397759ee5404bfb9e5ae07570ae610e.png#pic_center =200x)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/e397759ee5404bfb9e5ae07570ae610e.png#pic_center=200x)
 
 
 # 前言
