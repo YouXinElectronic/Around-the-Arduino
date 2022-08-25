@@ -1,28 +1,23 @@
-/*!
- * @file readDHT11.ino
- * @brief DHT11 is used to read the temperature and humidity of the current environment. 
- *
- * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
- * @license     The MIT License (MIT)
- * @author [Wuxiao](xiao.wu@dfrobot.com)
- * @version  V1.0
- * @date  2018-09-14
- * @url https://github.com/DFRobot/DFRobot_DHT11
- */
+/*
+  Get DHT11 temperature and humidity data
+  Author: YXDZ
+  Creation Date: 2022/8/25
+  Version: V1.0
+  github：https://github.com/YouXinElectronic/Around-the-Arduino
+*/
 
-#include <DFRobot_DHT11.h>
-DFRobot_DHT11 DHT;
-#define DHT11_PIN 10
+#include <DHT11.h>
+DHT11 DHT(2);
 
 void setup(){
   Serial.begin(115200);
 }
 
 void loop(){
-  DHT.read(DHT11_PIN);
+  DHT.readDht11();
   Serial.print("temp:");
-  Serial.print(DHT.temperature);
+  Serial.print(DHT.getTemperature());
   Serial.print("  humi:");
-  Serial.println(DHT.humidity);
+  Serial.println(DHT.getHumidity());
   delay(1000);
 }
