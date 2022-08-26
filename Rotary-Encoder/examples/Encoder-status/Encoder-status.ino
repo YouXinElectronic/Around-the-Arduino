@@ -6,9 +6,9 @@
   github：https://github.com/YouXinElectronic/Around-the-Arduino
 */
 
-#define A_pin 2 //A端口连接引脚
-#define B_pin 3 //A端口连接引脚
-#define key_pin 4 //按键端口引脚
+#define A_pin 2 //A port connection pins
+#define B_pin 3 //B port connection pins
+#define key_pin 4 //Button port pins
 
 int EncoderNum =0; 
 int A_pin_State; 
