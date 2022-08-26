@@ -9,24 +9,24 @@
   - [Instructions for use](#instructions-for-use)
   - [size reference](#size-reference)
 
-# purchase link
+## purchase link
 
 [Click to buy]()
 
-# picture display
+## picture display
 
 <img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Active-buzzer/image/top.jpg" width="300"><img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Active-buzzer/image/bottom.jpg" width="300">
 
-# Introduction
+## Introduction
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The `active buzzer` sounding module is driven by `S8550 PNP` type triode. The `low level` drives the buzzer to sound, and it is suspended or turned off at high level. The on-board `freewheeling diode` provides a discharge current loop for the self-induced electromotive force and plays a protective role.
 
-# parameter
+## parameter
 | Voltage | 3.3 / 5V |
 |--|--|
 | Communication Interface | I/O high and low level drive (low level sound) |
 | Interface model | PH2.0-3P |
 
-# Pin description
+## Pin description
 
 | pin name | pin function |
 |--|--|
@@ -35,7 +35,7 @@
 | S | I/O level input port |
 
 
-# Instructions for use
+## Instructions for use
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before programming, you can plug the PH2.0 cable into the backplane, or connect as shown in the table below.
 
 | buzzer | arduino |
@@ -95,7 +95,7 @@ code snippet
 ```
 
 
-# size reference
+## size reference
 
 <img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Active-buzzer/image/Dimensions.jpg" width="300">
 
