@@ -33,7 +33,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before programming the code, you can directly insert the `PH2.0` cable into the `2` port on the backplane, or connect as follows
 
-| DHT11 | arduino |
+| HCSR04 | arduino |
 | ----- | ------- |
 | G     | GND     |
 | V     | 5V      |
