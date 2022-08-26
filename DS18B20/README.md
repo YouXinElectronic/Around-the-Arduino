@@ -1,51 +1,96 @@
-# DS18B20 #
+# purchase link
 
-Arduino library for the Maxim Integrated DS18B20 1-Wire temperature sensor. This library is very simple and intuitive to use, and supports auto-discovering sensors with an optional high/low condition or manually addressing individual sensors.
+[Click to buy]()
 
-For example, we can get the temperature from every sensor on the wire with just a few lines of code:
+# picture display
 
-```
+<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/DS18B20/image/top.jpg" width="300"><img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/DS18B20/image/bottom.jpg" width="300">
+
+# Introduction
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`DS18B20` is a classic single bus digital temperature sensor, its temperature measurement range is `-55 ~ 125 ℃`, and it has a `64-bit` read-only memory to store the serial number of the device, which allows up to 8 DS18B20s to communicate in parallel on a single bus at the same time, saving a lot of money The IO port of the user's MCU and other equipment is used, and the `10K resistor` is pulled up on the board, which is convenient for the user to use on the MCU without the pull-up function.
+
+# parameter
+| Voltage | 3.3 / 5V |
+|--|--|
+| Communication Interface | one-wire |
+| Temperature measurement range | -55 ~ +125℃ |
+| Temperature measurement error | ±0.5℃ |
+| Interface model | PH2.0-3P |
+
+# Pin description
+
+| pin name | pin function |
+|--|--|
+| G | power negative, ground |
+| V | Power is positive,3.3 / 5V |
+| D | Single bus data communication port |
+
+
+# Instructions for use
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before programming, you can plug the PH2.0 cable into the backplane, or connect as shown in the table below.
+
+| DS18B20 | arduino |
+|--|--|
+| G | GND |
+| V | 5V |
+| D | 2 |
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After connecting the sensor with the arduino, do the code burning, after the code burning is complete, open the serial monitor and set the baud rate to 115200 to view the data, you will see in the serial monitor every 1~ Return the measured temperature data in 2 seconds, the main function code is as follows
+
+```cpp
+
+/*
+  Get DS18B20 temperature data
+  Author: YXDZ
+  Creation Date: 2022/8/25
+  Version: V1.0
+  github：https://github.com/YouXinElectronic/Around-the-Arduino
+*/
+
 #include <DS18B20.h>
 
 DS18B20 ds(2);
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
 }
 
 void loop() {
-  while (ds.selectNext()) {
-    Serial.println(ds.getTempC());
-  }
+  ds.doConversion();
+  Serial.print("Temperature: ");
+  Serial.print(ds.getTempC());
+  Serial.println(" C\n");
+  delay(1000);
 }
+
+
 ```
 
-See the included [examples](/examples/) for more.
+code snippet
 
-## Installation ##
+```cpp
 
-This library uses the OneWire library, so you will need to have this installed. Install it using the Library Manager in the Arduino IDE or download the latest release from [GitHub](https://github.com/PaulStoffregen/OneWire).
+DS18B20 ds(2);
 
-In the **OneWire.h** file set `ONEWIRE_SEARCH` to 0 since the search functionality is also implemented in this library (don't do this if you need the search functionality for other 1-Wire devices). CRC must be enabled (choose whichever algorithm you prefer). This may save some space on your Arduino.
+```
 
-## Wiring the DS18B20 ##
-The resistor shown in all the circuit diagrams is 4.7k Ohm pullup resistor.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The `2` code in parentheses is the port connected when driving `DS18B20`, users can modify it according to their own needs
 
-### External Power Mode ###
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are very complete library functions in the library file for you to call. If you need to get the temperature, you only need to call the following two functions to get the temperature value collected by the sensor
 
-#### Single ####
-![A single externally powered DS18B20](/extras/single_external.png)
+```cpp
 
-#### Multiple ####
-![Multiple externally powered DS18B20s](/extras/multiple_external.png)
+doConversion()
 
-### Parasitic Power Mode ###
+getTempC()
 
-#### Single ####
-![A single parasite powered DS18B20](/extras/single_parasite.png)
+```
 
-#### Multiple ####
-![Multiple parasite powered DS18B20s](/extras/multiple_parasite.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The `doConversion()` function is used to start the `DS18B20` temperature conversion. We need to start it every time we need to get the temperature. After starting, we can call the function `getTempC()`, which will return the collected temperature data for our use.
 
-### Mixed Power Mode ###
-![Mixed mode DS18B20s](/extras/mixed_mode.png)
+
+# size reference
+
+<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/DS18B20/image/Dimensions.jpg" width="300">
+
+
