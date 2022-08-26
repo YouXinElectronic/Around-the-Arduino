@@ -4,18 +4,15 @@
 
 # picture display
 
-<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/DHT11/image/top.jpg" width="300"><img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/DHT11/image/bottom.jpg" width="300">
+<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Active-buzzer/image/top.jpg" width="300"><img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Active-buzzer/image/bottom.jpg" width="300">
 
 # Introduction
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`DHT11` is a temperature and humidity composite sensor with calibrated digital signal output. It applies dedicated digital module acquisition technology and temperature and humidity sensing technology to ensure the product has reliable stability. The module communicates with MCU and other devices through a single bus, only one line is needed, the module has a built-in pull-up `4.7K resistor`, and the user does not need an external pull-up, which is convenient for users to use on a microcontroller without pull-up function.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The `active buzzer` sounding module is driven by `S8550 PNP` type triode. The `low level` drives the buzzer to sound, and it is suspended or turned off at high level. The on-board `freewheeling diode` provides a discharge current loop for the self-induced electromotive force and plays a protective role.
 
 # parameter
 | Voltage | 3.3 / 5V |
 |--|--|
-| Communication Interface | one-wire |
-| Temperature measurement range | -20 ~ +60℃ |
-| Temperature measurement error | ±2℃ |
-| Humidity measurement range | 20% ~ 95%RH（0 – 50℃） |
+| Communication Interface | I/O high and low level drive (low level sound) |
 | Interface model | PH2.0-3P |
 
 # Pin description
@@ -24,44 +21,45 @@
 |--|--|
 | G | power negative, ground |
 | V | Power is positive,3.3 / 5V |
-| D | Single bus data communication port |
+| S | I/O level input port |
 
 
 # Instructions for use
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before programming the code, you can directly insert the `PH2.0` cable into the `2` port on the backplane, or connect as follows
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before programming, you can plug the PH2.0 cable into the backplane, or connect as shown in the table below.
 
-| DHT11 | arduino |
+| buzzer | arduino |
 |--|--|
 | G | GND |
 | V | 5V |
-| D | 2 |
+| S | 2 |
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After connecting the wires, burn the code, open the serial monitor and set the baud rate to `115200`, and you will see the temperature and humidity data returned one after another in the serial monitor.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connect the sensor to the arduino, after programming the code, we will hear the buzzer beep beep-dip-dip-dip, the frequency is once every 1S.
 
 ```cpp
 
 /*
-  Get DHT11 temperature and humidity data
+  The buzzer sounds in 1s cycle
   Author: YXDZ
   Creation Date: 2022/8/25
   Version: V1.0
   github：https://github.com/YouXinElectronic/Around-the-Arduino
 */
 
-#include <DHT11.h>
-DHT11 DHT(2);
+#define Buzzer_Pin 2
+#define cycleTimes 1000
 
-void setup(){
-  Serial.begin(115200);
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(Buzzer_Pin,OUTPUT);
+  digitalWrite(Buzzer_Pin,HIGH);   //No sound when power on
 }
 
-void loop(){
-  DHT.readDht11();
-  Serial.print("temp:");
-  Serial.print(DHT.getTemperature());
-  Serial.print("  humi:");
-  Serial.println(DHT.getHumidity());
-  delay(1000);
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(Buzzer_Pin,HIGH);   //High level does not sound
+  delay(cycleTimes/2);
+  digitalWrite(Buzzer_Pin,LOW);   //low level
+  delay(cycleTimes/2);
 }
 
 
@@ -71,26 +69,23 @@ code snippet
 
 ```cpp
 
-DHT11 DHT(2);
+#define Buzzer_Pin 2
 
 ```
 
-The `2` code in parentheses is the port connected when driving `DHT11`, users can modify it according to their own needs
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Obviously, the number 2 is used to modify the use of the buzzer link port. We only need to change 2 to 3 to plug the buzzer into the digital port 3 of Arduino for use
 
-Before taking out the `DHT11` data, you need to use the `readDht11()` function to read the `DHT11` once. After obtaining the `DHT11`, you can use the following functions to obtain the temperature and humidity data respectively.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We see another code snippet that can be used to modify the frequency of the buzzer sounding in ms
 
 ```cpp
 
-getTemperature()
-
-getHumidity()
+#define cycleTimes 1000
 
 ```
 
-The code is very simple to use, you only need to call the `DHT11` library we have written to use the above functions to quickly drive the `DHT11`.
 
 # size reference
 
-<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/DHT11/image/Dimensions.jpg" width="300">
+<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Active-buzzer/image/Dimensions.jpg" width="300">
 
 
