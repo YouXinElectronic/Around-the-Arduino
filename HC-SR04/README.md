@@ -4,7 +4,7 @@
 
 # picture display
 
-<img title="" src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/HCSR04/image/top.jpg" alt="" width="300"><img title="" src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/HCSR04/image/bottom.jpg" alt="" width="300">
+<img title="" src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/HC-SR04/image/top.jpg" alt="" width="300"><img title="" src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/HC-SR04/image/bottom.jpg" alt="" width="300">
 
 # Introduction
 
@@ -33,11 +33,12 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before programming the code, you can directly insert the `PH2.0` cable into the `2` port on the backplane, or connect as follows
 
-| DHT11 | arduino |
+| HCSR04 | arduino |
 | ----- | ------- |
 | G     | GND     |
 | V     | 5V      |
-| D     | 2       |
+| E     | 4       |
+| T     | 3       |
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After connecting the line, burn the code, open the serial monitor, set the baud rate to <mark>9600</mark>, and you will see the distance data returned one after another in the serial monitor.
 
@@ -97,4 +98,4 @@ This function is to print the detection distance parameter of <mark>HCSR04</mark
 
 # size reference
 
-<img title="" src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/HCSR04/image/Dimensions.jpg" alt="" width="300">
+<img title="" src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/HC-SR04/image/Dimensions.jpg" alt="" width="300">

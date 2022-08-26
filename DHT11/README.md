@@ -1,15 +1,24 @@
-# purchase link
 
+# Contents
+
+  - [purchase link](#purchase-link)
+  - [picture display](#picture-display)
+  - [Introduction](#introduction)
+  - [parameter](#parameter)
+  - [Pin description](#pin-description)
+  - [Instructions for use](#instructions-for-use)
+  - [size reference](#size-reference)
+
+## purchase link
 [Click to buy]()
 
-# picture display
-
+## picture display
 <img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/DHT11/image/top.jpg" width="300"><img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/DHT11/image/bottom.jpg" width="300">
 
-# Introduction
+## Introduction
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`DHT11` is a temperature and humidity composite sensor with calibrated digital signal output. It applies dedicated digital module acquisition technology and temperature and humidity sensing technology to ensure the product has reliable stability. The module communicates with MCU and other devices through a single bus, only one line is needed, the module has a built-in pull-up `4.7K resistor`, and the user does not need an external pull-up, which is convenient for users to use on a microcontroller without pull-up function.
 
-# parameter
+## parameter
 | Voltage | 3.3 / 5V |
 |--|--|
 | Communication Interface | one-wire |
@@ -18,7 +27,7 @@
 | Humidity measurement range | 20% ~ 95%RH（0 – 50℃） |
 | Interface model | PH2.0-3P |
 
-# Pin description
+## Pin description
 
 | pin name | pin function |
 |--|--|
@@ -27,7 +36,7 @@
 | D | Single bus data communication port |
 
 
-# Instructions for use
+## Instructions for use
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before programming the code, you can directly insert the `PH2.0` cable into the `2` port on the backplane, or connect as follows
 
 | DHT11 | arduino |
@@ -89,7 +98,7 @@ getHumidity()
 
 The code is very simple to use, you only need to call the `DHT11` library we have written to use the above functions to quickly drive the `DHT11`.
 
-# size reference
+## size reference
 
 <img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/DHT11/image/Dimensions.jpg" width="300">
 
