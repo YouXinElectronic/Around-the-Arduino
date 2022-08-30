@@ -4,7 +4,7 @@
 
 # picture display
 
-<img title="" src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Thermal/image/top.jpg" alt="" width="300"><img title="" src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Thermal/image/bottom.jpg" alt="" width="300">
+<img title="" src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/ThermalSensor/image/top.jpg" alt="" width="300"><img title="" src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/ThermalSensor/image/bottom.jpg" alt="" width="300">
 
 # Introduction
 
@@ -91,4 +91,4 @@ Serial.println(sensorValue);This function is to print the detection level parame
 
 # size reference
 
-<img title="" src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Thermal/image/Dimensions.jpg" alt="" width="300">
+<img title="" src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/ThermalSensor/image/Dimensions.jpg" alt="" width="300">
