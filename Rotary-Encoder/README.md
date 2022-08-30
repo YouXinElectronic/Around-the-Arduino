@@ -13,19 +13,17 @@
 [Click to buy]()
 
 ## picture display
-<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/DHT11/image/top.jpg" width="300"><img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/DHT11/image/bottom.jpg" width="300">
+<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Rotary-Encoder/image/top.jpg" width="300"><img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Rotary-Encoder/image/bottom.jpg" width="300">
 
 ## Introduction
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`DHT11` is a temperature and humidity composite sensor with calibrated digital signal output. It applies dedicated digital module acquisition technology and temperature and humidity sensing technology to ensure the product has reliable stability. The module communicates with MCU and other devices through a single bus, only one line is needed, the module has a built-in pull-up `4.7K resistor`, and the user does not need an external pull-up, which is convenient for users to use on a microcontroller without pull-up function.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The `rotary encoder` can `count the number of pulses output in the forward direction` and `reverse direction` by rotating it. Determine the rotation direction by detecting the pulse sequence of `A B phase`, and has a `key` function, the default `A B phase` `And the button port both output `high level`, output `low level` after triggering, module A and B phases and buttons have `10K` pull-up resistors and `0.1uf` filter capacitors, which is convenient for users to use MCU without pull-up function. It is used on the software and avoids the user's delay processing at the software level.
 
 ## parameter
 | Voltage | 3.3 / 5V |
 |--|--|
-| Communication Interface | one-wire |
-| Temperature measurement range | -20 ~ +60℃ |
-| Temperature measurement error | ±2℃ |
-| Humidity measurement range | 20% ~ 95%RH（0 – 50℃） |
-| Interface model | PH2.0-3P |
+| Communication Interface | I/O high and low level communication |
+| Number of pulses | lap 20 |
+| Interface model | PH2.0-5P |
 
 ## Pin description
 
@@ -33,73 +31,171 @@
 |--|--|
 | G | power negative, ground |
 | V | Power is positive,3.3 / 5V |
-| D | Single bus data communication port |
+| A | A-phase signal output |
+| B | B-phase signal output |
+| S | key signal output |
 
 
 ## Instructions for use
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before programming the code, you can directly insert the `PH2.0` cable into the `2` port on the backplane, or connect as follows
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Before programming the code, you can directly insert the `PH2.0` cable into the `2` 、 `3` 、 `4` port on the backplane, or connect as follows
 
-| DHT11 | arduino |
+| Rotary encoder | arduino |
 |--|--|
 | G | GND |
 | V | 5V |
-| D | 2 |
+| A | 2 |
+| B | 3 |
+| S | 4 |
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After connecting the wires, burn the code, open the serial monitor and set the baud rate to `115200`, and you will see the temperature and humidity data returned one after another in the serial monitor.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After connecting the wires, burn the code, open the serial monitor and set the baud rate to `115200`, You will see the `rotary encoder` counts returned as well as the key state in the serial monitor.
 
 ```cpp
 
 /*
-  Get DHT11 temperature and humidity data
+  Output the current state of the encoder and count
   Author: YXDZ
   Creation Date: 2022/8/25
   Version: V1.0
   github：https://github.com/YouXinElectronic/Around-the-Arduino
 */
 
-#include <DHT11.h>
-DHT11 DHT(2);
+#define A_pin 2 //A port connection pins
+#define B_pin 3 //B port connection pins
+#define key_pin 4 //Button port pins
 
-void setup(){
-  Serial.begin(115200);
+int EncoderNum =0; 
+int A_pin_State; 
+int A_pin_BeforeState;
+bool bottomState =0; 
+bool timeState = 0;
+
+void setup() 
+{
+  pinMode (A_pin,INPUT); 
+  pinMode (B_pin,INPUT); 
+  pinMode (key_pin,INPUT);
+  Serial.begin (115200); 
+  A_pin_BeforeState = digitalRead(A_pin); 
 }
+void loop() 
+{
+  bottomState = 1;
+  
+  A_pin_State = digitalRead(A_pin);
+  if (A_pin_State != A_pin_BeforeState)
+  {
+    if (digitalRead(B_pin) != A_pin_BeforeState)
+    {
+      EncoderNum++; 
+    } 
+    else 
+    {
+      EncoderNum--; 
+    }
+    
+  }
+  A_pin_BeforeState = A_pin_State;
 
-void loop(){
-  DHT.readDht11();
-  Serial.print("temp:");
-  Serial.print(DHT.getTemperature());
-  Serial.print("  humi:");
-  Serial.println(DHT.getHumidity());
-  delay(1000);
+  if (digitalRead(key_pin) == LOW)
+  {
+    bottomState = 0;
+  }
+
+  if(millis()%500/5 == 0)
+  {
+    if(timeState == 0)
+    {
+      timeState = 1;
+      Serial.print("EncoderNum:");
+      Serial.print(EncoderNum/2);
+      Serial.print("     button state:");
+      Serial.println(bottomState);
+      }
+    }
+  else
+  {
+    timeState = 0;
+    }
 }
 
 
 ```
 
-code snippet
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code snippet
 
 ```cpp
 
-DHT11 DHT(2);
+#define A_pin 2 //A port connection pins
+#define B_pin 3 //B port connection pins
+#define key_pin 4 //Button port pins
 
 ```
 
-The `2` code in parentheses is the port connected when driving `DHT11`, users can modify it according to their own needs
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This code macro defines the connection ports of the A, B phases and the button pins, which can be modified according to your own needs.
 
-Before taking out the `DHT11` data, you need to use the `readDht11()` function to read the `DHT11` once. After obtaining the `DHT11`, you can use the following functions to obtain the temperature and humidity data respectively.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Among the defined variables, EncoderNum stores the count of the encoder. The count increases clockwise and decreases counterclockwise. BottomState stores the state of the switch button. When the value is 1, the button is not pressed, and when the value is 0, it is the pressed state.
 
 ```cpp
 
-getTemperature()
-
-getHumidity()
+int EncoderNum =0; 
+int A_pin_State; 
+int A_pin_BeforeState;
+bool bottomState =0; 
+bool timeState = 0;
 
 ```
 
-The code is very simple to use, you only need to call the `DHT11` library we have written to use the above functions to quickly drive the `DHT11`.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In the main function, there are three major parts of the code, which respectively realize the detection of the encoder count, the detection of the button function, and the rough timing output of the serial port. Users can refer to the following code to modify.
+
+```cpp
+
+  A_pin_State = digitalRead(A_pin);
+  if (A_pin_State != A_pin_BeforeState)
+  {
+    if (digitalRead(B_pin) != A_pin_BeforeState)
+    {
+      EncoderNum++; 
+    } 
+    else 
+    {
+      EncoderNum--; 
+    }
+  }
+  A_pin_BeforeState = A_pin_State;
+
+```
+
+```cpp
+
+  if (digitalRead(key_pin) == LOW)
+  {
+    bottomState = 0;
+  }
+
+```
+
+```cpp
+
+  if(millis()%500/5 == 0)
+  {
+    if(timeState == 0)
+    {
+      timeState = 1;
+      Serial.print("EncoderNum:");
+      Serial.print(EncoderNum/2);
+      Serial.print("     button state:");
+      Serial.println(bottomState);
+      }
+    }
+  else
+  {
+    timeState = 0;
+    }
+
+```
 
 ## size reference
 
-<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/DHT11/image/Dimensions.jpg" width="300">
+<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Rotary-Encoder/image/Dimensions.jpg" width="300">
 
 
