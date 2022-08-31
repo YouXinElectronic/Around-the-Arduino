@@ -34,11 +34,11 @@
 | Rain detection sensor | DS18B20 temperature measurement module | 5V relay module |
 | Water level sensor | DHT11 temperature and humidity module | |
 
-For a more detailed description of the corresponding sensor, you can click on the corresponding path to have a corresponding description. We will add more sensors to our arduino development and learning queue in the future.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For a more detailed description of the corresponding sensor, you can click on the corresponding path to have a corresponding description. We will add more sensors to our arduino development and learning queue in the future.
 
 # Other branches
 
-The main branch only stores the code under the sensor corresponding to the arduino and the instructions for use. Users who need it can check our other branches, which store some of the STM32 and STC51 MCU series MCU codes we wrote.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The main branch only stores the code under the sensor corresponding to the arduino and the instructions for use. Users who need it can check our other branches, which store some of the STM32 and STC51 MCU series MCU codes we wrote.
 
 [stm32 branch](https://github.com/YouXinElectronic/Around-the-Arduino/tree/stm32)
 
