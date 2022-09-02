@@ -4,7 +4,7 @@
 
 # picture display
 
-<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/RotaryPotentiometer/image/top" width="300"><img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/RotaryPotentiometer/image/bottom" width="300">
+<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/RotaryPotentiometer/image/top.jpg" width="300"><img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/RotaryPotentiometer/image/bottom.jpg" width="300">
 
 # Introduction
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
