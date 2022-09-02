@@ -4,11 +4,7 @@
 
 # picture display
 
-<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/
-MatrixTouchButton
-/image/top.jpg " width="300"><img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/
-MatrixTouchButton
-/image/bottom.jpg" width="300">
+<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/MatrixTouchButton/image/top.jpg " width="300"><img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/MatrixTouchButton/image/buttom.jpg" width="300">
 
 # Introduction
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -114,7 +110,5 @@ void loop()
 
 # size reference
 
-<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/
-MatrixTouchButton
-/image/Dimensions.jpg" width="300">
+<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/MatrixTouchButton/image/Dimensions.jpg" width="300">
 
