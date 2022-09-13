@@ -76,4 +76,4 @@ void loop() {
 
 # size reference
 
-<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/PhotosensitiveSensor/image/Dimensions.jpg" width="300">
+<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/PhotosensitiveSensor/image/Dimensions.png" width="300">
