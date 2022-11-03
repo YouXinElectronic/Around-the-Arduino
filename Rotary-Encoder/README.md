@@ -10,7 +10,7 @@
   - [size reference](#size-reference)
 
 ## purchase link
-[Click to buy]()
+[Click to buy](https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-21223910208.29.7d2b6a4bhBGp0x&id=686359658933)
 
 ## picture display
 <img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Rotary-Encoder/image/top.jpg" width="300"><img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/Rotary-Encoder/image/bottom.jpg" width="300">
