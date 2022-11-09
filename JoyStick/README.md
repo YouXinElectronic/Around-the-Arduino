@@ -11,6 +11,9 @@
 
 ## Picture display
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/fa7f6f270cb5457097a9073aa4538b2c.png#pic_center)
+## Introduction
+The JoyStick potentiometer switch module has (X,Y) 2-axis analog voltage output and (W) 1-way button digital high-low level output.
+
 ## Parameter
 Pin interface: five-wire PH2.0 socket
 
