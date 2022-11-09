@@ -2,6 +2,7 @@
 
   - [purchase link](#purchase-link)
   - [Picture display](#Picture-display)
+  - [Introduction](#Introduction)
   - [Parameter](#Parameter)
   - [Instructions for use](#Instructions-for-use)
 
