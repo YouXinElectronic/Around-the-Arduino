@@ -1,9 +1,9 @@
 # Contents
 
   - [purchase link](#purchase-link)
-  - [Picture display](#Picture display)
+  - [Picture display](#Picture-display)
   - [Parameter](#Parameter)
-  - [Instructions for use](#Instructions for use)
+  - [Instructions for use](#Instructions-for-use)
 
   
 ## Purchase link
