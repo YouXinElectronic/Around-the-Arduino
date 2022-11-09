@@ -23,8 +23,12 @@ Mounting hole size: 3mm
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/c61714f99c0a4f02aba7aec34e8aa740.png#pic_center)
 ## Instructions for use
 The three pins of relay output have no output voltage, which is equivalent to a single-pole double-throw switch. The switch has no voltage output without the difference between positive and negative poles.
+
 1.Normally open connection
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/fab7a6d34892445b81295a3dd16b4835.png#pic_center)
+
 2.Normally closed connection
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/e83d3ce124474e699155295385e207b8.png#pic_center)
 
