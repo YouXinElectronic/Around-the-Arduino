@@ -7,9 +7,7 @@
   - [Instructions for use](#instructions-for-use)
 
 ## Purchase link
-[Click to buy](https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-21223910208.11.4f3a6a4bsdXrGp&id=687983997671
-
-)
+[Click to buy](https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-21223910208.11.4f3a6a4bsdXrGp&id=687983997671)
 
 ## Picture display
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/440c9aa6e9514cf483d2494a046beb42.png#pic_center)
