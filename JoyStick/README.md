@@ -1,15 +1,26 @@
-﻿@[TOC](Contents)
+# Contents
+
+  - [purchase link](#purchase-link)
+  - [Picture display](#Picture display)
+  - [Parameter](#Parameter)
+  - [Instructions for use](#Instructions for use)
+
+  
 ## Purchase link
 [Click to buy](https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-21223910208.17.4baf6a4bup8ih0&id=688290877964)
 
 ## Picture display
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/fa7f6f270cb5457097a9073aa4538b2c.png#pic_center)
-## Introduction
+## Parameter
 Pin interface: five-wire PH2.0 socket
- V (3.3-5V), G (GND) 
- X (analog voltage signal output in the direction of X axis)
- Y (analog voltage signal output in the direction of Y axis)
- W (switching quantity high and low level output)
+
+V (3.3-5V), G (GND) 
+ 
+X (analog voltage signal output in the direction of X axis)
+ 
+Y (analog voltage signal output in the direction of Y axis)
+ 
+W (switching quantity high and low level output)
 
 PWR: indicates the power indicator
 
