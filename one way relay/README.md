@@ -20,7 +20,9 @@ PWR: indicates the power indicator
 TRG: relay suction indicator
 
 Mounting hole size: 3mm
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/c61714f99c0a4f02aba7aec34e8aa740.png#pic_center)
+
 ## Instructions for use
 The three pins of relay output have no output voltage, which is equivalent to a single-pole double-throw switch. The switch has no voltage output without the difference between positive and negative poles.
 
