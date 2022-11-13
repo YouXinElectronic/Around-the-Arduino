@@ -4,7 +4,7 @@
 
 # picture display
 
-<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/PhotosensitiveSensor/image/top.jpg " width="300"><img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/PhotosensitiveSensor/image/bottom.jpg" width="300">
+<img src="https://raw.githubusercontent.com/YouXinElectronic/Around-the-Arduino/main/PhotosensitiveSensor/image/LSR3。png " width="300">
 
 # Introduction
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
